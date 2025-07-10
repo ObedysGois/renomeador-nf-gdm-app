@@ -10,20 +10,8 @@ const config = require('../config');
 const csvParse = require('csv-parse/sync');
 
 const app = express();
-const port = process.env.PORT || 5000; // Railway usa PORT automático
+const port = config.server.port;
 
-// Configurar CORS para produção
-const corsOptions = {
-  origin: [
-    'http://localhost:3000', // desenvolvimento
-    'https://seu-app.vercel.app', // produção (substituir pela URL real)
-    /\.vercel\.app$/ // qualquer subdomínio do Vercel
-  ],
-  credentials: true,
-  optionsSuccessStatus: 200
-};
-
-app.use(cors(corsOptions));
 const CLIENTES_DATA_PATH = path.join(__dirname, config.files.clientesPath);
 
 // Carregar dados de clientes de XLSX e CSV
