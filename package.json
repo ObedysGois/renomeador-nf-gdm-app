@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cd renomeador-nf-gdm-app && npm start",
+    "build": "cd renomeador-nf-gdm-app && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-deps": "cd renomeador-nf-gdm-app && npm install"
   },
   "keywords": [],
   "author": "",

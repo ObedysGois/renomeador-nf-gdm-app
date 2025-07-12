@@ -358,10 +358,21 @@ app.use((error, req, res, next) => {
     });
 });
 
-app.listen(port, () => {
-    console.log(`🚀 Servidor rodando em http://localhost:${port}`);
-    console.log(`📁 Diretório de uploads: ${uploadDir}`);
-    console.log(`📁 Diretório de arquivos processados: ${processedPdfsDir}`);
+// Adicione no início do arquivo:
+const PORT = process.env.PORT || 5000;
+
+// Configure CORS para aceitar o domínio do Netlify:
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'renomeadordev.netlify.app' // Substitua pelo seu domínio
+  ],
+  credentials: true
+}));
+
+// No final, substitua:
+app.listen(PORT, () => {
+    console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
 });
 
 // Função para remover acentos e padronizar texto
