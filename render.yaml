@@ -2,7 +2,9 @@ services:
   - type: web
     name: renomeador-nf-gdm-frontend
     env: static
-    staticPublishPath: renomeador-nf-gdm-app/build
+    rootDir: renomeador-nf-gdm-app
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./build
     envVars:
       - key: NODE_VERSION
-        value: 18.0.0 
+        value: 18.0.0
