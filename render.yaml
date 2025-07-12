@@ -2,8 +2,7 @@ services:
   - type: web
     name: renomeador-nf-gdm-frontend
     env: static
-    buildCommand: cd renomeador-nf-gdm-app && npm install && npm run build
-    staticPublishPath: renomeador-nf-gdm-app/build
+    staticPublishPath: build
     rootDir: renomeador-nf-gdm-app
     envVars:
       - key: NODE_VERSION
