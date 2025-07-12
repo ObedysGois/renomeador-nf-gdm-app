@@ -22,3 +22,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .env.* 
+
+# Build outputs
+renomeador-nf-gdm-app/build/
+
+# Node modules
+node_modules/
+
+# Uploads e arquivos processados
+server/uploads/
+server/processed_pdfs/
