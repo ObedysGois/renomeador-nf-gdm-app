@@ -1,186 +1,70 @@
-# 🔄 Renomeador de Notas Fiscais - GDM
+# Getting Started with Create React App
 
-Um aplicativo web moderno para processar e renomear automaticamente arquivos PDF de notas fiscais baseado em dados extraídos do documento.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## 🚀 Funcionalidades
+## Available Scripts
 
-- **Upload de múltiplos PDFs**: Arraste e solte ou selecione arquivos PDF
-- **Extração automática de dados**: Extrai informações como número da NF, CNPJ, data, valor, etc.
-- **Renomeação inteligente**: Renomeia arquivos baseado em dados extraídos e base de clientes
-- **Validação de CFOP**: Processa apenas notas com CFOPs específicos (2411, 6202, 5202) ou devoluções
-- **Interface moderna**: Design responsivo com feedback visual
-- **Download de arquivos**: Acesso direto aos arquivos processados
-- **Gerenciamento de arquivos**: Lista e limpeza de arquivos salvos
+In the project directory, you can run:
 
-## 📋 Dados Extraídos
+### `npm start`
 
-O sistema extrai automaticamente os seguintes dados das notas fiscais:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-- **Nº da NF (DANFE)**: Número da nota fiscal
-- **CNPJ do Emitente**: Para busca na base de clientes
-- **Razão Social**: Nome da empresa emitente
-- **Data de Emissão**: Data da emissão da nota
-- **Valor Total**: Valor total da nota fiscal
-- **CFOP**: Código fiscal de operações
-- **Natureza da Operação**: Descrição da operação
-- **Dados Adicionais**: Número e motivo (quando disponíveis)
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## 🎯 Padrão de Renomeação
+### `npm test`
 
-Os arquivos são renomeados seguindo o padrão:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-```
-NFD [Número NF] - [Nome Fantasia/1º Nome + Cidade + Bairro] - [Data] - R$ [Valor] - REF. [Número] - MOT. [Motivo].pdf
-```
+### `npm run build`
 
-### Exemplos:
-- `NFD 1364 - MASANI - 13/05/2025 - R$ 167,01 - REF. 53795 - MOT. MERCADORIA DE TROCA.pdf`
-- `NFD 1364 - SENDAS JUAZEIRO JARDIM VITORIA - 13/05/2025 - R$ 167,01 - REF. 53795 - MOT. MERCADORIA DE TROCA.pdf`
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## 🛠️ Tecnologias Utilizadas
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### Backend
-- **Node.js** com **Express.js**
-- **Multer** para upload de arquivos
-- **pdf-parse** para extração de texto de PDFs
-- **pdf-lib** para manipulação de PDFs
-- **xlsx** para leitura de arquivos Excel
-- **CORS** para comunicação entre frontend e backend
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Frontend
-- **React.js** com hooks modernos
-- **react-dropzone** para upload de arquivos
-- **Axios** para requisições HTTP
-- **CSS3** com design responsivo e animações
+### `npm run eject`
 
-## 📦 Instalação e Configuração
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### Pré-requisitos
-- Node.js (versão 14 ou superior)
-- npm ou yarn
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### 1. Clone o repositório
-```bash
-git clone [URL_DO_REPOSITORIO]
-cd "Renomeador de NF - GDM"
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-### 2. Instale as dependências do backend
-```bash
-npm install
-```
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-### 3. Instale as dependências do frontend
-```bash
-cd renomeador-nf-gdm-app
-npm install
-```
+## Learn More
 
-### 4. Configure a base de clientes
-Certifique-se de que o arquivo `DADOSCLIENTES.xlsx` está presente em:
-```
-renomeador-nf-gdm-app/public/DADOSCLIENTES.xlsx
-```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-O arquivo deve conter as colunas:
-- **CNPJ Emitente**: CNPJ da empresa
-- **Nome Fantasia**: Nome fantasia da empresa
-- **Vendedor**: Nome do vendedor
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-### 5. Inicie o servidor backend
-```bash
-# Na pasta raiz do projeto
-cd server
-node index.js
-```
+### Code Splitting
 
-O servidor estará rodando em `http://localhost:5000`
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### 6. Inicie o aplicativo React
-```bash
-# Em outro terminal, na pasta do app
-cd renomeador-nf-gdm-app
-npm start
-```
+### Analyzing the Bundle Size
 
-O aplicativo estará disponível em `http://localhost:3000`
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-## 🎮 Como Usar
+### Making a Progressive Web App
 
-1. **Acesse o aplicativo** em `http://localhost:3000`
-2. **Arraste e solte** arquivos PDF de notas fiscais na área de upload
-3. **Aguarde o processamento** - o sistema extrairá os dados automaticamente
-4. **Visualize os resultados** - cada arquivo mostrará seu status e dados extraídos
-5. **Faça download** dos arquivos renomeados clicando no botão de download
-6. **Gerencie arquivos** - visualize todos os arquivos salvos e limpe quando necessário
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-## 🔧 Configurações Avançadas
+### Advanced Configuration
 
-### CFOPs Válidos
-Para modificar quais CFOPs são aceitos, edite o array `cfopValidos` no arquivo `server/index.js`:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-```javascript
-const cfopValidos = ['2411', '6202', '5202'];
-```
+### Deployment
 
-### Padrões de Extração
-Os padrões de extração de dados podem ser ajustados no arquivo `server/index.js` na função `extractData()`.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### Portas
-- **Backend**: Porta 5000 (configurável em `server/index.js`)
-- **Frontend**: Porta 3000 (configurável no package.json do React)
+### `npm run build` fails to minify
 
-## 📁 Estrutura do Projeto
-
-```
-Renomeador de NF - GDM/
-├── package.json                 # Dependências do projeto
-├── server/
-│   ├── index.js                # Servidor Express
-│   ├── uploads/                # Arquivos temporários
-│   └── processed_pdfs/         # PDFs processados
-├── renomeador-nf-gdm-app/
-│   ├── public/
-│   │   ├── DADOSCLIENTES.xlsx  # Base de clientes
-│   │   └── index.html
-│   ├── src/
-│   │   ├── App.js             # Componente principal
-│   │   ├── App.css            # Estilos
-│   │   └── index.js
-│   └── package.json
-└── README.md
-```
-
-## 🐛 Solução de Problemas
-
-### Erro ao carregar dados de clientes
-- Verifique se o arquivo `DADOSCLIENTES.xlsx` existe no caminho correto
-- Confirme se o arquivo não está corrompido
-
-### Erro de CORS
-- Certifique-se de que o servidor backend está rodando na porta 5000
-- Verifique se o CORS está configurado corretamente
-
-### Arquivos não processados
-- Verifique se os PDFs contêm os dados necessários
-- Confirme se o CFOP está na lista de CFOPs válidos
-
-## 🤝 Contribuição
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Este projeto está sob a licença ISC. Veja o arquivo `LICENSE` para mais detalhes.
-
-## 📞 Suporte
-
-Para suporte ou dúvidas, entre em contato através dos canais disponíveis.
-
----
-
-**Desenvolvido com ❤️ para GDM** 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -1,6 +1,0 @@
-{
-  "buildCommand": "cd renomeador-nf-gdm-app && npm install && npm run build",
-  "outputDirectory": "renomeador-nf-gdm-app/build",
-  "framework": "create-react-app",
-  "installCommand": "cd renomeador-nf-gdm-app && npm install"
-} 
