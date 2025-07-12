@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "cd renomeador-nf-gdm-app && npm start",
-    "build": "cd renomeador-nf-gdm-app && npm run build",
+    "build": "cd renomeador-nf-gdm-app && npm run build:app",
     "test": "cd renomeador-nf-gdm-app && npm test",
     "eject": "cd renomeador-nf-gdm-app && npm run eject",
     "server": "node server/index.js",
