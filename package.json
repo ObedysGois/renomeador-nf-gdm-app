@@ -1,0 +1,8 @@
+{
+  "name": "renomeador-nf-gdm",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd renomeador-nf-gdm-app && npm install && npm run build"
+  }
+} 

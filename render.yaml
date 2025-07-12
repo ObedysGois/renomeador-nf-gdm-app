@@ -2,8 +2,7 @@ services:
   - type: web
     name: renomeador-nf-gdm-frontend
     env: static
-    staticPublishPath: build
-    rootDir: renomeador-nf-gdm-app
+    staticPublishPath: renomeador-nf-gdm-app/build
     envVars:
       - key: NODE_VERSION
         value: 18.0.0 
