@@ -369,11 +369,9 @@ app.use((error, req, res, next) => {
 const PORT = process.env.PORT || 5000;
 
 // Configure CORS para aceitar o domínio do Render:
+// Configurar CORS
 app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'https://renomeador-nf-gdm-app.onrender.com' // Seu domínio no Render
-  ],
+  origin: allowedOrigins,
   credentials: true
 }));
 

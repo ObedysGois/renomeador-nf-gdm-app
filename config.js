@@ -105,7 +105,7 @@ module.exports = {
     
     // CORS
     cors: {
-      origin: ['http://localhost:3000', 'http://127.0.0.1:3000'],
+      origin: ['http://localhost:3000', 'http://127.0.0.1:3000', 'https://renomeador-nf-gdm-app.onrender.com'],
       credentials: true
     }
   },
@@ -118,4 +118,4 @@ module.exports = {
     // Número máximo de arquivos processados simultaneamente
     maxConcurrentFiles: 5
   }
-}; 
+};
