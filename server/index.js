@@ -368,11 +368,11 @@ app.use((error, req, res, next) => {
 // Adicione no início do arquivo:
 const PORT = process.env.PORT || 5000;
 
-// Configure CORS para aceitar o domínio do Netlify:
+// Configure CORS para aceitar o domínio do Render:
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://renomeador-nf-gdm-app.onrender.com', // Exemplo do Render
+    'https://renomeador-nf-gdm-app.onrender.com' // Seu domínio no Render
   ],
   credentials: true
 }));

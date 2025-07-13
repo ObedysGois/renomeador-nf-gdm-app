@@ -17,7 +17,7 @@ function App() {
 
   const loadSavedFiles = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/files');
+      const response = await axios.get(`${API_URL}/files`);
       setSavedFiles(response.data);
     } catch (error) {
       console.error('Erro ao carregar arquivos:', error);
@@ -65,7 +65,7 @@ function App() {
 
   const clearAllFiles = async () => {
     try {
-      await axios.delete('http://localhost:5000/files');
+      await axios.delete(`${API_URL}/files`);
       setSavedFiles([]);
       setProcessedFiles([]);
       setMessage('Todos os arquivos foram removidos');
@@ -165,7 +165,7 @@ function App() {
                           )}
                           {file.downloadPath && (
                             <a 
-                              href={`http://localhost:5000${file.downloadPath}`} 
+                              href={`${API_URL}${file.downloadPath}`} 
                               target="_blank" 
                               rel="noopener noreferrer"
                               className="download-btn"
@@ -201,7 +201,11 @@ function App() {
                     <span className="file-size">{formatFileSize(file.size)}</span>
                   </div>
                   <a 
-                    href={`http://localhost:5000${file.path}`} 
+                    // Substitua esta linha
+                    href={`http://localhost:5000${file.path}`}
+                    
+                    // Por esta
+                    href={`${API_URL}${file.path}`} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="download-btn small"
