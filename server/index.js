@@ -10,7 +10,14 @@ const config = require('../config');
 const csvParse = require('csv-parse/sync');
 
 const app = express();
-const port = config.server.port;
+const port = process.env.PORT || 5000;
+
+// Configuração CORS mais robusta para web
+const allowedOrigins = [
+  'http://localhost:5000', 
+  'http://localhost:5001',
+  'https://renomeador-nf-gdm-app.onrender.com', // Exemplo do Render
+];
 
 const CLIENTES_DATA_PATH = path.join(__dirname, config.files.clientesPath);
 

@@ -37,9 +37,6 @@ function App() {
       // Substitua todas as ocorrências de http://localhost:5000 por:
       const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
       
-      // Exemplo:
-      const response = await axios.get(`${API_URL}/files`);
-      
       // Fazer upload dos arquivos
       const response = await axios.post(`${API_URL}/upload`, formData, {
         headers: {
