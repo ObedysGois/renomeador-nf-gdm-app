@@ -4,7 +4,6 @@ import axios from 'axios';
 import './App.css';
 
 function App() {
-  // Definir API_URL no escopo global do componente
   const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
   
   const [processedFiles, setProcessedFiles] = useState([]);
@@ -13,19 +12,18 @@ function App() {
   const [savedFiles, setSavedFiles] = useState([]);
   const [showDetails, setShowDetails] = useState({});
 
-  // Carregar arquivos salvos ao iniciar
-  useEffect(() => {
-    loadSavedFiles();
-  }, []);
-
-  const loadSavedFiles = async () => {
+  const loadSavedFiles = useCallback(async () => {
     try {
       const response = await axios.get(`${API_URL}/files`);
       setSavedFiles(response.data);
     } catch (error) {
       console.error('Erro ao carregar arquivos:', error);
     }
-  };
+  }, [API_URL]); // Adicionar API_URL como dependência
+
+  useEffect(() => {
+    loadSavedFiles();
+  }, [loadSavedFiles]);
 
   const onDrop = useCallback(async (acceptedFiles) => {
     setLoading(true);
@@ -56,7 +54,7 @@ function App() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [API_URL, loadSavedFiles]); // Adicionar API_URL e loadSavedFiles como dependências
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
