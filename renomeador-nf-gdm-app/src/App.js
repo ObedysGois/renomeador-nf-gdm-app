@@ -4,6 +4,9 @@ import axios from 'axios';
 import './App.css';
 
 function App() {
+  // Definir API_URL no escopo global do componente
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  
   const [processedFiles, setProcessedFiles] = useState([]);
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
@@ -33,9 +36,8 @@ function App() {
     });
 
     try {
-      // Substitua as URLs hardcoded por:
-      // Substitua todas as ocorrências de http://localhost:5000 por:
-      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      // Remover a definição local de API_URL, pois agora está no escopo global
+      // const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
       
       // Fazer upload dos arquivos
       const response = await axios.post(`${API_URL}/upload`, formData, {
@@ -201,10 +203,6 @@ function App() {
                     <span className="file-size">{formatFileSize(file.size)}</span>
                   </div>
                   <a 
-                    // Substitua esta linha
-                    href={`http://localhost:5000${file.path}`}
-                    
-                    // Por esta
                     href={`${API_URL}${file.path}`} 
                     target="_blank" 
                     rel="noopener noreferrer"
