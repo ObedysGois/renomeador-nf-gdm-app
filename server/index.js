@@ -14,8 +14,8 @@ const port = process.env.PORT || 5000;
 
 // Configuração CORS mais robusta para web
 const allowedOrigins = [
-  'http://localhost:5000', 
-  'http://localhost:5001',
+  'http://localhost:3000', 
+  'http://localhost:3001',
   'https://renomeador-nf-gdm-app.onrender.com', // Exemplo do Render
 ];
 
@@ -372,7 +372,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'renomeadordev.netlify.app' // Substitua pelo seu domínio
+    'https://renomeador-nf-gdm-app.onrender.com', // Exemplo do Render
   ],
   credentials: true
 }));
