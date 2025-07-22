@@ -20,7 +20,7 @@ const allowedOrigins = [
   'http://localhost:3002',
   'http://localhost:3003',
   'http://127.0.0.1:3000',
-  'https://renomeador-nf-gdm-app.onrender.com', // Frontend no Render
+  'https://gdm-frontend.onrender.com', // Frontend no Render
 ];
 
 // Use apenas uma configuração CORS
@@ -389,7 +389,7 @@ app.use((error, req, res, next) => {
 // Substituir a linha app.use(cors(config.security.cors)) por:
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002', 'http://localhost:3003', 'http://127.0.0.1:3000', 'https://renomeador-nf-gdm-app.onrender.com'],
+  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002', 'http://localhost:3003', 'http://127.0.0.1:3000', 'https://gdm-backend.onrender.com'],
   credentials: true
 }));
 
