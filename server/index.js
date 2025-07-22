@@ -72,8 +72,7 @@ const loadClientesData = () => {
 // Carregar dados de clientes ao iniciar o servidor
 loadClientesData();
 
-// Configurar CORS - REMOVA esta linha
-// app.use(cors(config.security.cors));
+
 
 // Use apenas esta configuração CORS
 app.use(cors({
@@ -388,10 +387,7 @@ app.use((error, req, res, next) => {
 // Configurar CORS
 // Substituir a linha app.use(cors(config.security.cors)) por:
 
-app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002', 'http://localhost:3003', 'http://127.0.0.1:3000', 'https://gdm-backend.onrender.com'],
-  credentials: true
-}));
+
 
 // No final, substitua:
 app.listen(PORT, () => {
