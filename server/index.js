@@ -10,14 +10,26 @@ const config = require('../config');
 const csvParse = require('csv-parse/sync');
 
 const app = express();
-const port = process.env.PORT || 5000;
+// Definição única da porta
+const PORT = process.env.PORT || 5000;
 
-// Configuração CORS mais robusta para web
+// Configuração CORS unificada
 const allowedOrigins = [
   'http://localhost:3000', 
   'http://localhost:3001',
-  'https://renomeador-nf-gdm-app.onrender.com', // Exemplo do Render
+  'http://localhost:3002',
+  'http://localhost:3003',
+  'http://127.0.0.1:3000',
+  'https://renomeador-nf-gdm-app.onrender.com', // Frontend no Render
 ];
+
+// Use apenas uma configuração CORS
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
+app.use(express.json());
 
 const CLIENTES_DATA_PATH = path.join(__dirname, config.files.clientesPath);
 
@@ -60,8 +72,14 @@ const loadClientesData = () => {
 // Carregar dados de clientes ao iniciar o servidor
 loadClientesData();
 
-// Configurar CORS
-app.use(cors(config.security.cors));
+// Configurar CORS - REMOVA esta linha
+// app.use(cors(config.security.cors));
+
+// Use apenas esta configuração CORS
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 app.use(express.json());
 
 // Configurar headers de segurança
@@ -366,12 +384,12 @@ app.use((error, req, res, next) => {
 });
 
 // Adicione no início do arquivo:
-const PORT = process.env.PORT || 5000;
-
 // Configure CORS para aceitar o domínio do Render:
 // Configurar CORS
+// Substituir a linha app.use(cors(config.security.cors)) por:
+
 app.use(cors({
-  origin: allowedOrigins,
+  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002', 'http://localhost:3003', 'http://127.0.0.1:3000', 'https://renomeador-nf-gdm-app.onrender.com'],
   credentials: true
 }));
 
@@ -385,4 +403,4 @@ function normalizeText(text) {
     return text
         ? text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().trim()
         : '';
-}
+};
