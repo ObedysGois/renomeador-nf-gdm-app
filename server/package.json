@@ -1,10 +1,18 @@
 {
   "name": "renomeador-nf-gdm-backend",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "Backend para o Renomeador de NF - GDM",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
+=======
+  "description": "Backend para processamento de PDFs de NF",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+>>>>>>> 8ed0fb27 (tentativa atualizada)
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -13,9 +21,16 @@
     "pdf-parse": "^1.1.1",
     "pdf-lib": "^1.17.1",
     "xlsx": "^0.18.5",
+<<<<<<< HEAD
     "csv-parse": "^5.3.6"
   },
   "engines": {
     "node": "18.x"
+=======
+    "csv-parse": "^5.3.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+>>>>>>> 8ed0fb27 (tentativa atualizada)
   }
 }

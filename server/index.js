@@ -388,6 +388,18 @@ app.use((error, req, res, next) => {
 // Substituir a linha app.use(cors(config.security.cors)) por:
 
 
+<<<<<<< HEAD
+=======
+// Configure CORS para aceitar o domínio do Render:
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://renomeador-nf-gdm-frontend.onrender.com', // Seu domínio do frontend no Render
+    'https://seu-dominio-personalizado.com' // Se tiver domínio personalizado
+  ],
+  credentials: true
+}));
+>>>>>>> 8ed0fb27 (tentativa atualizada)
 
 // No final, substitua:
 app.listen(PORT, () => {

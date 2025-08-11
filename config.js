@@ -105,7 +105,15 @@ module.exports = {
     
     // CORS
     cors: {
+<<<<<<< HEAD
       origin: ['http://localhost:3000', 'http://127.0.0.1:3000', 'https://renomeador-nf-gdm-app.onrender.com'],
+=======
+      origin: [
+        'http://localhost:3000', 
+        'http://127.0.0.1:3000',
+        'https://renomeador-nf-gdm-frontend.onrender.com' // Adicionar domínio do Render
+      ],
+>>>>>>> 8ed0fb27 (tentativa atualizada)
       credentials: true
     }
   },
