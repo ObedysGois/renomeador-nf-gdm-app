@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: renomeador-nf-gdm-backend
+    name: renomeador-backend-dev
     env: node
     plan: free
     rootDir: server
@@ -14,7 +14,7 @@ services:
     healthCheckPath: /
 
   - type: web
-    name: renomeador-nf-gdm-frontend
+    name: gdm-frontend
     env: static
     plan: free
     rootDir: renomeador-nf-gdm-app
@@ -24,9 +24,9 @@ services:
       - key: NODE_VERSION
         value: 20.0.0
       - key: REACT_APP_API_URL
-        value: https://renomeador-nf-gdm-backend.onrender.com
+        value: https://renomeador-backend-dev.onrender.com
   - type: web
-    name: renomeador-nf-gdm-backend
+    name: renomeador-backend-dev
     env: node
     rootDir: server
     buildCommand: npm install
@@ -37,7 +37,7 @@ services:
     healthCheckPath: /
 
   - type: web
-    name: renomeador-nf-gdm-frontend
+    name: gdm-frontend
     env: static
     rootDir: renomeador-nf-gdm-app
     buildCommand: npm install && npm run build
@@ -46,9 +46,9 @@ services:
       - key: NODE_VERSION
         value: 18.0.0
       - key: REACT_APP_API_URL
-        value: https://renomeador-nf-gdm-backend.onrender.com
+        value: https://renomeador-backend-dev.onrender.com
   - type: web
-    name: renomeador-nf-gdm-backend
+    name: renomeador-backend-dev
     env: node
     rootDir: server
     buildCommand: npm install
@@ -59,7 +59,7 @@ services:
     healthCheckPath: /
 
   - type: web
-    name: renomeador-nf-gdm-frontend
+    name: gdm-frontend
     env: static
     rootDir: renomeador-nf-gdm-app
     buildCommand: npm install && npm run build
@@ -68,9 +68,9 @@ services:
       - key: NODE_VERSION
         value: 18.0.0
       - key: REACT_APP_API_URL
-        value: https://renomeador-nf-gdm-backend.onrender.com
+        value: https://renomeador-backend-dev.onrender.com
   - type: web
-    name: renomeador-nf-gdm-backend
+    name: renomeador-backend-dev
     env: node
     rootDir: server
     buildCommand: npm install
@@ -81,7 +81,7 @@ services:
     healthCheckPath: /
 
   - type: web
-    name: renomeador-nf-gdm-frontend
+    name: gdm-frontend
     env: static
     rootDir: renomeador-nf-gdm-app
     buildCommand: npm install && npm run build
@@ -90,9 +90,9 @@ services:
       - key: NODE_VERSION
         value: 18.0.0
       - key: REACT_APP_API_URL
-        value: https://renomeador-nf-gdm-backend.onrender.com
+        value: https://renomeador-backend-dev.onrender.com
   - type: web
-    name: renomeador-nf-gdm-backend
+    name: renomeador-backend-dev
     env: node
     rootDir: server
     buildCommand: npm install
@@ -103,7 +103,7 @@ services:
     healthCheckPath: /
 
   - type: web
-    name: renomeador-nf-gdm-frontend
+    name: gdm-frontend
     env: static
     rootDir: renomeador-nf-gdm-app
     buildCommand: npm install && npm run build
@@ -112,9 +112,9 @@ services:
       - key: NODE_VERSION
         value: 18.0.0
       - key: REACT_APP_API_URL
-        value: https://renomeador-nf-gdm-backend.onrender.com
+        value: https://renomeador-backend-dev.onrender.com
   - type: web
-    name: renomeador-nf-gdm-backend
+    name: renomeador-backend-dev
     env: node
     rootDir: server
     buildCommand: npm install
@@ -125,7 +125,7 @@ services:
     healthCheckPath: /
 
   - type: web
-    name: renomeador-nf-gdm-frontend
+    name: gdm-frontend
     env: static
     rootDir: renomeador-nf-gdm-app
     buildCommand: npm install && npm run build
@@ -134,9 +134,9 @@ services:
       - key: NODE_VERSION
         value: 18.0.0
       - key: REACT_APP_API_URL
-        value: https://renomeador-nf-gdm-backend.onrender.com
+        value: https://renomeador-backend-dev.onrender.com
   - type: web
-    name: renomeador-nf-gdm-backend
+    name: renomeador-backend-dev
     env: node
     rootDir: server
     buildCommand: npm install
@@ -147,7 +147,7 @@ services:
     healthCheckPath: /
 
   - type: web
-    name: renomeador-nf-gdm-frontend
+    name: gdm-frontend
     env: static
     rootDir: renomeador-nf-gdm-app
     buildCommand: npm install && npm run build
@@ -156,9 +156,9 @@ services:
       - key: NODE_VERSION
         value: 18.0.0
       - key: REACT_APP_API_URL
-        value: https://renomeador-nf-gdm-backend.onrender.com
+        value: https://renomeador-backend-dev.onrender.com
   - type: web
-    name: renomeador-nf-gdm-backend
+    name: renomeador-backend-dev
     env: node
     rootDir: server
     buildCommand: npm install
@@ -169,7 +169,7 @@ services:
     healthCheckPath: /
 
   - type: web
-    name: renomeador-nf-gdm-frontend
+    name: gdm-frontend
     env: static
     rootDir: renomeador-nf-gdm-app
     buildCommand: npm install && npm run build
@@ -178,9 +178,9 @@ services:
       - key: NODE_VERSION
         value: 18.0.0
       - key: REACT_APP_API_URL
-        value: https://renomeador-nf-gdm-backend.onrender.com
+        value: https://renomeador-backend-dev.onrender.com
   - type: web
-    name: renomeador-nf-gdm-backend
+    name: renomeador-backend-dev
     env: node
     rootDir: server
     buildCommand: npm install
@@ -191,7 +191,7 @@ services:
     healthCheckPath: /
 
   - type: web
-    name: renomeador-nf-gdm-frontend
+    name: gdm-frontend
     env: static
     rootDir: renomeador-nf-gdm-app
     buildCommand: npm install && npm run build
@@ -200,9 +200,9 @@ services:
       - key: NODE_VERSION
         value: 18.0.0
       - key: REACT_APP_API_URL
-        value: https://renomeador-nf-gdm-backend.onrender.com
+        value: https://renomeador-backend-dev.onrender.com
   - type: web
-    name: renomeador-nf-gdm-backend
+    name: renomeador-backend-dev
     env: node
     rootDir: server
     buildCommand: npm install
@@ -213,7 +213,7 @@ services:
     healthCheckPath: /
 
   - type: web
-    name: renomeador-nf-gdm-frontend
+    name: gdm-frontend
     env: static
     rootDir: renomeador-nf-gdm-app
     buildCommand: npm install && npm run build
@@ -222,9 +222,9 @@ services:
       - key: NODE_VERSION
         value: 18.0.0
       - key: REACT_APP_API_URL
-        value: https://renomeador-nf-gdm-backend.onrender.com
+        value: https://renomeador-backend-dev.onrender.com
   - type: web
-    name: renomeador-nf-gdm-backend
+    name: renomeador-backend-dev
     env: node
     rootDir: server
     buildCommand: npm install
@@ -235,7 +235,7 @@ services:
     healthCheckPath: /
 
   - type: web
-    name: renomeador-nf-gdm-frontend
+    name: gdm-frontend
     env: static
     rootDir: renomeador-nf-gdm-app
     buildCommand: npm install && npm run build
@@ -244,9 +244,9 @@ services:
       - key: NODE_VERSION
         value: 18.0.0
       - key: REACT_APP_API_URL
-        value: https://renomeador-nf-gdm-backend.onrender.com
+        value: https://renomeador-backend-dev.onrender.com
   - type: web
-    name: renomeador-nf-gdm-backend
+    name: renomeador-backend-dev
     env: node
     rootDir: server
     buildCommand: npm install
@@ -257,7 +257,7 @@ services:
     healthCheckPath: /
 
   - type: web
-    name: renomeador-nf-gdm-frontend
+    name: gdm-frontend
     env: static
     rootDir: renomeador-nf-gdm-app
     buildCommand: npm install && npm run build
@@ -266,9 +266,9 @@ services:
       - key: NODE_VERSION
         value: 18.0.0
       - key: REACT_APP_API_URL
-        value: https://renomeador-nf-gdm-backend.onrender.com
+        value: https://renomeador-backend-dev.onrender.com
   - type: web
-    name: renomeador-nf-gdm-backend
+    name: renomeador-backend-dev
     env: node
     rootDir: server
     buildCommand: npm install
@@ -279,7 +279,7 @@ services:
     healthCheckPath: /
 
   - type: web
-    name: renomeador-nf-gdm-frontend
+    name: gdm-frontend
     env: static
     rootDir: renomeador-nf-gdm-app
     buildCommand: npm install && npm run build
@@ -288,9 +288,9 @@ services:
       - key: NODE_VERSION
         value: 18.0.0
       - key: REACT_APP_API_URL
-        value: https://renomeador-nf-gdm-backend.onrender.com
+        value: https://renomeador-backend-dev.onrender.com
   - type: web
-    name: renomeador-nf-gdm-backend
+    name: renomeador-backend-dev
     env: node
     rootDir: server
     buildCommand: npm install
@@ -301,7 +301,7 @@ services:
     healthCheckPath: /
 
   - type: web
-    name: renomeador-nf-gdm-frontend
+    name: gdm-frontend
     env: static
     rootDir: renomeador-nf-gdm-app
     buildCommand: npm install && npm run build
@@ -310,9 +310,9 @@ services:
       - key: NODE_VERSION
         value: 18.0.0
       - key: REACT_APP_API_URL
-        value: https://renomeador-nf-gdm-backend.onrender.com
+        value: https://renomeador-backend-dev.onrender.com
   - type: web
-    name: renomeador-nf-gdm-backend
+    name: renomeador-backend-dev
     env: node
     rootDir: server
     buildCommand: npm install
