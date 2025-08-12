@@ -8,7 +8,7 @@ services:
     startCommand: node server/index.js
     envVars:
       - key: NODE_VERSION
-        value: 18.0.0
+        value: 20.0.0
       - key: PORT
         value: 10000
     healthCheckPath: /
@@ -17,12 +17,13 @@ services:
   - type: web
     name: renomeador-nf-gdm-frontend
     env: static
+    plan: free
     rootDir: renomeador-nf-gdm-app
     buildCommand: npm install && npm run build
     staticPublishPath: ./build
     envVars:
       - key: NODE_VERSION
-        value: 18.0.0
+        value: 20.0.0
       - key: REACT_APP_API_URL
         value: https://renomeador-nf-gdm-backend.onrender.com
   - type: web
