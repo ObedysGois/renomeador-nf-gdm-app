@@ -10,17 +10,15 @@ const config = require('../config');
 const csvParse = require('csv-parse/sync');
 
 const app = express();
+
 // Definição única da porta
 const PORT = process.env.PORT || 5000;
 
 // Configuração CORS unificada
 const allowedOrigins = [
-  'http://localhost:3000', 
-  'http://localhost:3001',
-  'http://localhost:3002',
-  'http://localhost:3003',
+  'http://localhost:3000',
   'http://127.0.0.1:3000',
-  'https://gdm-frontend.onrender.com', // Frontend no Render
+  'https://renomeador-nf-gdm-frontend.onrender.com'
 ];
 
 // Use apenas uma configuração CORS
@@ -382,33 +380,30 @@ app.use((error, req, res, next) => {
     });
 });
 
-// Adicione no início do arquivo:
-// Configure CORS para aceitar o domínio do Render:
-// Configurar CORS
-// Substituir a linha app.use(cors(config.security.cors)) por:
+// Substitua/adicione logo após a criação do app:
+const PORT = process.env.PORT || config.server.port || 5000;
 
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://127.0.0.1:3000',
+  'https://renomeador-nf-gdm-frontend.onrender.com'
+];
 
-<<<<<<< HEAD
-=======
-// Configure CORS para aceitar o domínio do Render:
 app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'https://renomeador-nf-gdm-frontend.onrender.com', // Seu domínio do frontend no Render
-    'https://seu-dominio-personalizado.com' // Se tiver domínio personalizado
-  ],
+  origin: allowedOrigins,
   credentials: true
 }));
->>>>>>> 8ed0fb27 (tentativa atualizada)
+app.use(express.json());
 
-// No final, substitua:
+// Remova todas as outras definições de PORT, allowedOrigins e app.use(cors(...)) duplicadas
+// Mantenha apenas uma no final:
+
 app.listen(PORT, () => {
-    console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
+    console.log(`🚀 Servidor rodando na porta ${PORT}`);
 });
 
-// Função para remover acentos e padronizar texto
 function normalizeText(text) {
     return text
         ? text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().trim()
         : '';
-};
+}

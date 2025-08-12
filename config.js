@@ -96,24 +96,17 @@ module.exports = {
 
   // Configurações de segurança
   security: {
-    // Headers de segurança
     headers: {
       'X-Content-Type-Options': 'nosniff',
       'X-Frame-Options': 'DENY',
       'X-XSS-Protection': '1; mode=block'
     },
-    
-    // CORS
     cors: {
-<<<<<<< HEAD
-      origin: ['http://localhost:3000', 'http://127.0.0.1:3000', 'https://renomeador-nf-gdm-app.onrender.com'],
-=======
       origin: [
-        'http://localhost:3000', 
+        'http://localhost:3000',
         'http://127.0.0.1:3000',
-        'https://renomeador-nf-gdm-frontend.onrender.com' // Adicionar domínio do Render
+        'https://renomeador-nf-gdm-frontend.onrender.com'
       ],
->>>>>>> 8ed0fb27 (tentativa atualizada)
       credentials: true
     }
   },

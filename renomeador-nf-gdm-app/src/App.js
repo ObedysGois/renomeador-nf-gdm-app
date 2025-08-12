@@ -10,12 +10,12 @@ function App() {
   const [savedFiles, setSavedFiles] = useState([]);
   const [showDetails, setShowDetails] = useState({});
 
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
   // Carregar arquivos salvos ao iniciar
   useEffect(() => {
     loadSavedFiles();
   }, []);
-
-  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
   const loadSavedFiles = async () => {
     try {
@@ -35,10 +35,6 @@ function App() {
     });
 
     try {
-      // Substitua as URLs hardcoded por:
-      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
-      
-      // Fazer upload dos arquivos
       const response = await axios.post(`${API_URL}/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
@@ -164,6 +160,8 @@ function App() {
                               )}
                             </div>
                           )}
+                          // Certificar que todos os hrefs usam ${API_URL}:
+                          
                           {file.downloadPath && (
                             <a 
                               href={`${API_URL}${file.downloadPath}`} 
@@ -174,6 +172,16 @@ function App() {
                               📥 Download
                             </a>
                           )}
+                          
+                          // E na seção de arquivos salvos:
+                          <a 
+                            href={`${API_URL}${file.path}`} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="download-btn small"
+                          >
+                            📥
+                          </a>
                         </div>
                       ) : (
                         <p className="reason">{file.reason}</p>
