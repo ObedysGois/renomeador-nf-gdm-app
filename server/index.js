@@ -1,3 +1,4 @@
+// topo do arquivo (mantido)
 const express = require('express');
 const multer = require('multer');
 const cors = require('cors');
@@ -14,19 +15,17 @@ const app = express();
 // Definição única da porta
 const PORT = process.env.PORT || 5000;
 
-// Configuração CORS unificada
+// Configuração CORS unificada (mantenha apenas esta)
 const allowedOrigins = [
   'http://localhost:3000',
   'http://127.0.0.1:3000',
-  'https://renomeador-nf-gdm-frontend.onrender.com'
+  'https://renomeador-nf-gdm-frontend.onrender.com' // frontend no Render
 ];
 
-// Use apenas uma configuração CORS
 app.use(cors({
   origin: allowedOrigins,
   credentials: true
 }));
-
 app.use(express.json());
 
 const CLIENTES_DATA_PATH = path.join(__dirname, config.files.clientesPath);
@@ -380,28 +379,13 @@ app.use((error, req, res, next) => {
     });
 });
 
-// Substitua/adicione logo após a criação do app:
-const PORT = process.env.PORT || config.server.port || 5000;
-
-const allowedOrigins = [
-  'http://localhost:3000',
-  'http://127.0.0.1:3000',
-  'https://renomeador-nf-gdm-frontend.onrender.com'
-];
-
-app.use(cors({
-  origin: allowedOrigins,
-  credentials: true
-}));
-app.use(express.json());
-
-// Remova todas as outras definições de PORT, allowedOrigins e app.use(cors(...)) duplicadas
-// Mantenha apenas uma no final:
+// Removido: duplicações de allowedOrigins, app.use(cors(...)) e redefinições de PORT aqui no final
 
 app.listen(PORT, () => {
     console.log(`🚀 Servidor rodando na porta ${PORT}`);
 });
 
+// Função para remover acentos e padronizar texto
 function normalizeText(text) {
     return text
         ? text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().trim()
