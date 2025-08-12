@@ -105,7 +105,8 @@ module.exports = {
       origin: [
         'http://localhost:3000',
         'http://127.0.0.1:3000',
-        'https://renomeador-nf-gdm-frontend.onrender.com'
+        'https://renomeador-nf-gdm-frontend.onrender.com',
+        'https://gdm-frontend.onrender.com'
       ],
       credentials: true
     }

@@ -19,7 +19,8 @@ const PORT = process.env.PORT || 5000;
 const allowedOrigins = [
   'http://localhost:3000',
   'http://127.0.0.1:3000',
-  'https://renomeador-nf-gdm-frontend.onrender.com' // frontend no Render
+  'https://renomeador-nf-gdm-frontend.onrender.com', // frontend no Render (novo)
+  'https://gdm-frontend.onrender.com' // frontend antigo no Render
 ];
 
 app.use(cors({
