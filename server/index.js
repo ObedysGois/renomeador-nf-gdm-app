@@ -70,12 +70,9 @@ const loadClientesData = () => {
 // Carregar dados de clientes ao iniciar o servidor
 loadClientesData();
 
-// REMOVER ESTAS LINHAS DUPLICADAS (76-79):
-// app.use(cors({
-//   origin: allowedOrigins,
-//   credentials: true
-// }));
-// app.use(express.json());
+// Configurar CORS
+app.use(cors(config.security.cors));
+app.use(express.json());
 
 // Configurar headers de segurança
 Object.entries(config.security.headers).forEach(([key, value]) => {
